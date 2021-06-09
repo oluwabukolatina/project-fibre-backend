@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import ResponseHandler from '../../../../utils/response-handlers/ResponseHandler';
-import DummyRepository from '../repository/dummy.repository';
+import DummyRepository from '../service/dummy.repository';
 
 class DummyController {
   public createDummy = async ({ body }: Request, res: Response) => {

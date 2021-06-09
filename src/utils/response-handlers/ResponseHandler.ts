@@ -19,4 +19,20 @@ export default class ResponseHandler {
   ) {
     return res.status(statusCode).json({ message, status, data });
   }
+
+  static ServerErrorResponse(res: Response) {
+    return res
+      .status(500)
+      .json({ message: 'Internal Server Error', status: false });
+  }
+
+  static JoiErrorResponse(
+    res: Response,
+    statusCode: number,
+    status: boolean,
+    error: any,
+    message: string,
+  ) {
+    return res.status(statusCode).json({ status, message, error });
+  }
 }

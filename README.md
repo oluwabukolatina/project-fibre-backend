@@ -1,3 +1,5 @@
+## todo
+joi for validation
 # PROJECT-FIBRE
 > Invoice management app
 ## Getting Started
