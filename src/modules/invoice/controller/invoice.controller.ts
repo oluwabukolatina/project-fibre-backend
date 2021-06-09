@@ -48,7 +48,37 @@ class InvoiceController {
           { invoices },
         );
       }
-      return ResponseHandler.ErrorResponse(response, statusCode.HTTP_BAD_REQUEST, false, 'Unable to fetch the clients invoices')
+      return ResponseHandler.ErrorResponse(
+        response,
+        statusCode.HTTP_BAD_REQUEST,
+        false,
+        'Unable to fetch the clients invoices',
+      );
+    } catch (e) {
+      return ResponseHandler.ServerErrorResponse(response);
+    }
+  };
+
+  public getOneInvoice = async (request: Request, response: Response) => {
+    try {
+      const invoice = await InvoiceService.getInvoice({
+        _id: request.params.invoiceId,
+      });
+      if (invoice) {
+        return ResponseHandler.SuccessResponse(
+          response,
+          statusCode.HTTP_OK,
+          true,
+          'Fetched one invoice',
+          { invoice },
+        );
+      }
+      return ResponseHandler.ErrorResponse(
+        response,
+        statusCode.HTTP_BAD_REQUEST,
+        false,
+        'Unable to fetch the invoice',
+      );
     } catch (e) {
       return ResponseHandler.ServerErrorResponse(response);
     }

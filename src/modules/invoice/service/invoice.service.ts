@@ -25,5 +25,13 @@ class InvoiceService {
       return e;
     }
   }
+
+  public static async getInvoice(data: { _id: string }) {
+    try {
+      return await Model.find(data);
+    } catch (e) {
+      return e;
+    }
+  }
 }
 export default InvoiceService;

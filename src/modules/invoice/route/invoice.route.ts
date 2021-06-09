@@ -15,9 +15,11 @@ class InvoiceRoutes {
         invoiceMiddleware.validateCreateInvoice,
         this.invoiceController.createInvoice,
       );
-
     app
-      .route(`${URLS.INVOICE_URL}/:clientId`)
+      .route(`${URLS.INVOICE_URL}/:invoiceId`)
+      .get(auth, this.invoiceController.getOneInvoice);
+    app
+      .route(`${URLS.INVOICE_URL}/client/:clientId`)
       .get(auth, this.invoiceController.getClientInvoices);
   };
 }
