@@ -10,6 +10,7 @@ import swaggerDocument from '../swagger.json';
 import ClientRoutes from './modules/client/route/client.route';
 import AuthRoutes from './modules/auth/route/auth.route';
 import UserRoutes from './modules/user/route/user.route';
+import InvoiceRoutes from './modules/invoice/route/invoice.route';
 
 /**
  * routes
@@ -25,12 +26,15 @@ class App {
 
   public userRoutes: UserRoutes = new UserRoutes();
 
+  public invoiceRoutes: InvoiceRoutes = new InvoiceRoutes();
+
   constructor() {
     this.app = express();
     this.config();
     this.clientRoutes.routes(this.app);
     this.authRoutes.routes(this.app);
     this.userRoutes.routes(this.app);
+    this.invoiceRoutes.routes(this.app);
     this.app.disable('x-powered-by');
     this.app.get('/', (req, res) => res.send('Project Fibre'));
     this.app.use(

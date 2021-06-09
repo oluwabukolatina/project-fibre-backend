@@ -16,6 +16,7 @@ const UserSchema = new Schema(
       required: true,
     },
     clients: [{ type: Schema.Types.ObjectId, ref: 'Client' }],
+    invoices: [{ type: Schema.Types.ObjectId, ref: 'Invoice' }],
   },
   { timestamps: true },
 );

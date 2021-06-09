@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Model from '../entity/client.model';
 import { IClient } from '../interface/client.interface';
-import UserModel from '../../user/entity/user.model';
 
 interface ICreateClient {
   name: IClient['name'];
