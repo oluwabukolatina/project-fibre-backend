@@ -11,6 +11,8 @@ async function validateCreateInvoice(
   const schema = Joi.object().keys({
     name: Joi.string().required(),
     client: Joi.string().required(),
+    amount: Joi.number().required(),
+    description: Joi.string().required(),
   });
   const { error } = schema.validate(request.body, {
     stripUnknown: true,

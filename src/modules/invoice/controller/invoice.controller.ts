@@ -11,6 +11,8 @@ class InvoiceController {
         client: body.client,
         user: user.id,
         paid: false,
+        amount: body.amount,
+        description: body.description,
       });
       if (invoice._id) {
         return ResponseHandler.SuccessResponse(
@@ -29,6 +31,26 @@ class InvoiceController {
       );
     } catch (e) {
       return ResponseHandler.ServerErrorResponse(res);
+    }
+  };
+
+  public getClientInvoices = async (request: Request, response: Response) => {
+    try {
+      const invoices = await InvoiceService.getInvoices(
+        request.params.clientId,
+      );
+      if (invoices) {
+        return ResponseHandler.SuccessResponse(
+          response,
+          statusCode.HTTP_OK,
+          true,
+          'Fetched the clients invoices',
+          { invoices },
+        );
+      }
+      return ResponseHandler.ErrorResponse(response, statusCode.HTTP_BAD_REQUEST, false, 'Unable to fetch the clients invoices')
+    } catch (e) {
+      return ResponseHandler.ServerErrorResponse(response);
     }
   };
 }

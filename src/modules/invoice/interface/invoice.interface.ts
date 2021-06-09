@@ -5,4 +5,6 @@ export interface IInvoice extends Document {
   paid: boolean;
   client: string;
   user: string;
+  amount: number;
+  description: string;
 }

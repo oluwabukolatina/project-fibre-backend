@@ -15,6 +15,10 @@ class InvoiceRoutes {
         invoiceMiddleware.validateCreateInvoice,
         this.invoiceController.createInvoice,
       );
+
+    app
+      .route(`${URLS.INVOICE_URL}/:clientId`)
+      .get(auth, this.invoiceController.getClientInvoices);
   };
 }
 export default InvoiceRoutes;

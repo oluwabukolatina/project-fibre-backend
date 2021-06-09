@@ -7,6 +7,7 @@ const ClientSchema = new Schema(
     email: String,
     owner: { type: Schema.Types.ObjectId, ref: 'User' },
     invoices: [{ type: Schema.Types.ObjectId, ref: 'Invoice' }],
+    description: String,
   },
   { timestamps: true },
 );
