@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import Jwt from '../config/jwt';
 import * as statusCode from '../../../utils/status-codes/http-status-codes';
 import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
-import UserServices from '../../user/services/UserServices';
+import UserService from '../../user/services/user.service';
 
 class AuthController {
   public loginUser = async (req: Request, res: Response) => {
@@ -13,7 +13,7 @@ class AuthController {
       /*
       check for existing user
       */
-      const existingUser = await UserServices.findUser({ email });
+      const existingUser = await UserService.findUser({ email });
       /**
        * check password matches
        */
@@ -60,7 +60,7 @@ class AuthController {
   public register = async (req: Request, res: Response) => {
     const { name, email, password } = req.body;
     try {
-      const newUser = await UserServices.createUser({ name, email, password });
+      const newUser = await UserService.createUser({ name, email, password });
       if (!newUser) {
         return ResponseHandler.ErrorResponse(
           res,
@@ -70,7 +70,7 @@ class AuthController {
         );
       }
       newUser.password = await Jwt.hashPassword(newUser.password);
-      const saved = await UserServices.saveUser(newUser);
+      const saved = await UserService.saveUser(newUser);
       if (saved) {
         return ResponseHandler.SuccessResponse(
           res,

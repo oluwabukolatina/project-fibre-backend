@@ -9,6 +9,7 @@ import * as dotenv from 'dotenv';
 import swaggerDocument from '../swagger.json';
 import ClientRoutes from './modules/client/route/client.route';
 import AuthRoutes from './modules/auth/route/auth.route';
+import UserRoutes from './modules/user/route/user.route';
 
 /**
  * routes
@@ -22,11 +23,14 @@ class App {
 
   public authRoutes: AuthRoutes = new AuthRoutes();
 
+  public userRoutes: UserRoutes = new UserRoutes();
+
   constructor() {
     this.app = express();
     this.config();
     this.clientRoutes.routes(this.app);
     this.authRoutes.routes(this.app);
+    this.userRoutes.routes(this.app);
     this.app.disable('x-powered-by');
     this.app.get('/', (req, res) => res.send('Project Fibre'));
     this.app.use(

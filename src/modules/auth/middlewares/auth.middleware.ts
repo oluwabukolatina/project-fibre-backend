@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextFunction, Request, Response } from 'express';
 import Joi from 'joi';
-import UserServices from '../../user/services/UserServices';
+import UserService from '../../user/services/user.service';
 import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
 import { HTTP_BAD_REQUEST } from '../../../utils/status-codes/http-status-codes';
 
@@ -18,7 +18,7 @@ async function checkIfARegisteredUser(
 ) {
   const { email } = body;
   try {
-    const user = await UserServices.findUser({ email });
+    const user = await UserService.findUser({ email });
 
     if (user) {
       return ResponseHandler.ErrorResponse(
@@ -90,7 +90,7 @@ async function checkIfUserExists(
   next: NextFunction,
 ) {
   try {
-    const user = await UserServices.findUser({
+    const user = await UserService.findUser({
       email: request.body.email,
     });
     if (!user) {
