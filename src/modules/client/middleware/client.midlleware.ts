@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from 'express';
 import Joi from 'joi';
-import ResponseHandler from '../../../../utils/response-handlers/ResponseHandler';
-import { HTTP_BAD_REQUEST } from '../../../../utils/status-codes/http-status-codes';
+import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
+import { HTTP_BAD_REQUEST } from '../../../utils/status-codes/http-status-codes';
 
 async function validateCreateClient(
   request: Request,

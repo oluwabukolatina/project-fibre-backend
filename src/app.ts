@@ -6,9 +6,9 @@ import morgan from 'morgan';
  * Required External Modules
  */
 import * as dotenv from 'dotenv';
-import ClientRoutes from './lib/modules/client/route/client.route';
 import swaggerDocument from '../swagger.json';
-import AuthRoutes from './lib/modules/auth/route/auth.route';
+import ClientRoutes from './modules/client/route/client.route';
+import AuthRoutes from './modules/auth/route/auth.route';
 
 /**
  * routes

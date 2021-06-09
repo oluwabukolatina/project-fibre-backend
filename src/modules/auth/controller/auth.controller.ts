@@ -2,9 +2,9 @@
 /* eslint-disable max-len */
 import { Request, Response } from 'express';
 import Jwt from '../config/jwt';
-import * as statusCode from '../../../../utils/status-codes/http-status-codes';
-import ResponseHandler from '../../../../utils/response-handlers/ResponseHandler';
-import UserServices from '../../../../user/services/UserServices';
+import * as statusCode from '../../../utils/status-codes/http-status-codes';
+import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
+import UserServices from '../../user/services/UserServices';
 
 class AuthController {
   public loginUser = async (req: Request, res: Response) => {

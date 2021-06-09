@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import URLS from '../../../urls/urls';
+import URLS from '../../../utils/urls/urls';
 import AuthController from '../controller/auth.controller';
 import validation from '../middlewares/auth.middleware';
 

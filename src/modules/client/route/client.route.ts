@@ -1,6 +1,6 @@
 import { Application } from 'express';
+import URLS from '../../../utils/urls/urls';
 import ClientController from '../controller/client.controller';
-import URLS from '../../../urls/urls';
 import clientMiddleware from '../middleware/client.midlleware';
 
 class ClientRoutes {
@@ -10,6 +10,7 @@ class ClientRoutes {
     app
       .route(`${URLS.CLIENT_URL}`)
       .post(
+        auth
         clientMiddleware.validateCreateClient,
         this.clientController.createClient,
       );

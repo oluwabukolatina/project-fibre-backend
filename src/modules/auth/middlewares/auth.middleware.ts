@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextFunction, Request, Response } from 'express';
 import Joi from 'joi';
-import UserServices from '../../../../user/services/UserServices';
-import ResponseHandler from '../../../../utils/response-handlers/ResponseHandler';
-import { HTTP_BAD_REQUEST } from '../../../../utils/status-codes/http-status-codes';
+import UserServices from '../../user/services/UserServices';
+import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
+import { HTTP_BAD_REQUEST } from '../../../utils/status-codes/http-status-codes';
 
 /**
  * to sign the user

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import * as secret from '../../../../config/secrets';
+import * as secret from '../../../config/secrets';
 
 const Jwt = {
   createToken(id: number) {

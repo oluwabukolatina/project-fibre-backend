@@ -3,7 +3,7 @@ import fs from 'fs';
 import logger from './logger';
 
 if (fs.existsSync('.env')) {
-  // logger.info('Using .env file to supply config environment variables');
+  logger.info('Using .env file to supply config environment variables');
   dotenv.config({ path: '.env' });
 }
 function throwIfUndefined<T>(secret: T | undefined, name?: string): T {

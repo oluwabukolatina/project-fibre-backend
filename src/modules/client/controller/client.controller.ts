@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import ResponseHandler from '../../../../utils/response-handlers/ResponseHandler';
+import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
 import ClientService from '../service/client.service';
-import * as statusCode from '../../../../utils/status-codes/http-status-codes';
+import * as statusCode from '../../../utils/status-codes/http-status-codes';
 
 class ClientController {
   public createClient = async ({ body }: Request, res: Response) => {
