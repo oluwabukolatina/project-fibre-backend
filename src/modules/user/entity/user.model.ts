@@ -15,6 +15,7 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    clients: [{ type: Schema.Types.ObjectId, ref: 'Clients' }],
   },
   { timestamps: true },
 );

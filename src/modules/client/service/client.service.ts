@@ -5,6 +5,7 @@ import { IClient } from '../interface/client.interface';
 interface ICreateClient {
   name: IClient['name'];
   email: IClient['email'];
+  owner: IClient['owner'];
 }
 class ClientService {
   public static async createClient(data: ICreateClient) {

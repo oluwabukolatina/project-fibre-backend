@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Model from '../entity/user.model';
 import { IUser } from '../interface/user.interface';
 
@@ -30,6 +29,18 @@ export default class UserServices {
   public static async findUser(data: { email?: string; _id?: string }) {
     try {
       return await Model.findOne(data);
+    } catch (e) {
+      return e;
+    }
+  }
+
+  public static async saveClientToUser(data: any, user: IFindUser) {
+    try {
+      return await Model.findByIdAndUpdate(
+        user,
+        { $push: { clients: data } },
+        { new: true },
+      );
     } catch (e) {
       return e;
     }
