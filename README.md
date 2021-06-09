@@ -1,5 +1,3 @@
-## todo
-joi for validation
 # PROJECT-FIBRE
 > Invoice management app
 ## Getting Started
@@ -9,7 +7,7 @@ joi for validation
 
 ## Heroku App
 
-Application is deployed on Heroku. Use public URL [https://enigmatic-wildwood-43336.herokuapp.com](https://enigmatic-wildwood-43336.herokuapp.com) with API endpoints.
+Application is deployed on Heroku. Use public URL [https://project-fibre.herokuapp.com](https://enigmatic-wildwood-43336.herokuapp.com) with API endpoints.
 
 ## Swagger API Documentation
 API Documentation generated with [swagger](https://enigmatic-wildwood-43336.herokuapp.com/api-docs).

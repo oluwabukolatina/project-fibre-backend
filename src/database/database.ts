@@ -1,6 +1,6 @@
 import { connect } from 'mongoose';
 import * as dotenv from 'dotenv';
-import { ENVIRONMENT, APP_DB } from '../config/secrets';
+import * as secret from '../config/secrets';
 
 dotenv.config();
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -13,7 +13,7 @@ async function connectToDb() {
   };
   try {
     return await connect(
-      ENVIRONMENT === 'development' ? String(process.env.LOCAL_DB) : APP_DB,
+      secret.ENVIRONMENT === 'development' ? secret.LOCAL_DB : secret.APP_DB,
       options,
     );
   } catch (error) {

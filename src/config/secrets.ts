@@ -3,7 +3,7 @@ import fs from 'fs';
 import logger from './logger';
 
 if (fs.existsSync('.env')) {
-  logger.debug('Using .env file to supply config environment variables');
+  // logger.info('Using .env file to supply config environment variables');
   dotenv.config({ path: '.env' });
 }
 function throwIfUndefined<T>(secret: T | undefined, name?: string): T {
@@ -25,7 +25,7 @@ export const JWT_EXPIRY = throwIfUndefined(
   process.env.JWT_EXPIRY,
   'JWT_EXPIRY',
 );
-
+export const LOCAL_DB = throwIfUndefined(process.env.LOCAL_DB, 'LOCAL_DB');
 export const MAIL_TRAP_PASSWORD = throwIfUndefined(
   process.env.MAIL_TRAP_PASSWORD,
   'MAIL_TRAP_PASSWORD',
@@ -33,4 +33,9 @@ export const MAIL_TRAP_PASSWORD = throwIfUndefined(
 export const MAIL_TRAP_USER = throwIfUndefined(
   process.env.MAIL_TRAP_USER,
   'MAIL_TRAP_USER',
+);
+
+export const SENDGRID_API_KEY = throwIfUndefined(
+  process.env.SENDGRID_API_KEY,
+  'SENDGRID_API_KEY',
 );
