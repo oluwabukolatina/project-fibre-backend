@@ -19,6 +19,9 @@ class InvoiceController {
       });
       if (invoice._id) {
         // send email to the client after generating the invoice
+        /**
+         * email may be found in spam too, will be best to check ther just in case
+         */
         const client = await ClientService.getClient({ _id: body.client });
         await Email.sendWithNodemailer(
           MailHelpers.createInvoiceEmail(

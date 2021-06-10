@@ -4,6 +4,13 @@ import ClientService from '../service/client.service';
 import * as statusCode from '../../../utils/status-codes/http-status-codes';
 
 class ClientController {
+  /**
+   *
+   * @param param0
+   * @param res
+   * @returns
+   * real email should be used so as to see the invoce that is sent to the user. alternatively a mailtrap credentials can be added to the nodemailer file
+   */
   public createClient = async ({ body, user }: Request, res: Response) => {
     try {
       const client = await ClientService.createClient({

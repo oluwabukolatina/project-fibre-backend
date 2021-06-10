@@ -9,8 +9,8 @@
 
 Application is deployed on Heroku. Use public URL [https://project-fibre.herokuapp.com](https://enigmatic-wildwood-43336.herokuapp.com) with API endpoints.
 
-## Swagger API Documentation
-API Documentation generated with [swagger](https://enigmatic-wildwood-43336.herokuapp.com/api-docs).
+## API Documentation
+API Documentation generated with [postman](https://documenter.getpostman.com/view/4223397/TzeRoVYp).
 
 ---
 ## Technologies Used
@@ -20,6 +20,7 @@ API Documentation generated with [swagger](https://enigmatic-wildwood-43336.hero
 - [Express.js](https://expressjs.com) - Web application framework based on Node.js.
 - [ESLint](https://eslint.org/) - A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
 - [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb) style guide was followed.
+- [Typescript](https://www.typescriptlang.org/)
 
 ## Testing Tools
 - [Mocha](https://mochajs.org/) Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
@@ -50,7 +51,7 @@ API Documentation generated with [swagger](https://enigmatic-wildwood-43336.hero
   ```shell
   $ npm run dev
   ```
-- Use `http://localhost:2022` as base url for endpoints
+- Use `http://localhost:2029` as base url for endpoints
 
 ## API Endpoints
 
