@@ -2,7 +2,7 @@
 > Invoice management app
 ## Getting Started
 
->  [Technologies](#technologies-used) &middot; [Testing Tools](#testing-tools) &middot; [Installations](#installations) &middot; [API Endpoints](#api-endpoints) &middot; [Tests](#tests) &middot; [Acknowledgments](#acknowledgments) &middot; [Author](#author)
+>  [Technologies](#technologies-used) &middot; [Installations](#installations) &middot; [API Endpoints](#api-endpoints) &middot; [Acknowledgments](#acknowledgments) &middot; [Author](#author)
 ---
 
 ## Heroku App
@@ -22,9 +22,6 @@ API Documentation generated with [postman](https://documenter.getpostman.com/vie
 - [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb) style guide was followed.
 - [Typescript](https://www.typescriptlang.org/)
 
-## Testing Tools
-- [Mocha](https://mochajs.org/) Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
-- [Chai](https://chaijs.com) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
 
 ## Installations
 
@@ -58,11 +55,5 @@ API Documentation generated with [postman](https://documenter.getpostman.com/vie
 | METHOD | DESCRIPTION                             | ENDPOINTS                 |
 | ------ | --------------------------------------- | ------------------------- |
 | GET    | home               | `/`           |
-## Tests
-- Run test for all endpoints
-  > run the command below
-  ```shell
-  $ npm test
-  ```
 ## Author
 - [Tina](https://github.com/oluwabukolatina)
