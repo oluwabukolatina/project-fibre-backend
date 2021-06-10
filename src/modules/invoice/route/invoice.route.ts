@@ -6,7 +6,6 @@ import invoiceMiddleware from '../middleware/invoice.middleware';
 
 class InvoiceRoutes {
   public invoiceController: InvoiceController = new InvoiceController();
-
   public routes = (app: Application): void => {
     app
       .route(`${URLS.INVOICE_URL}`)

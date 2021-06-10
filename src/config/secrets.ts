@@ -35,7 +35,11 @@ export const MAIL_TRAP_USER = throwIfUndefined(
   'MAIL_TRAP_USER',
 );
 
-export const SENDGRID_API_KEY = throwIfUndefined(
-  process.env.SENDGRID_API_KEY,
-  'SENDGRID_API_KEY',
+export const EMAIL_FROM = throwIfUndefined(
+  process.env.EMAIL_FROM,
+  'EMAIL_FROM',
+);
+export const EMAIL_PASSWORD = throwIfUndefined(
+  process.env.EMAIL_PASSWORD,
+  'EMAIL_PASSWORD',
 );

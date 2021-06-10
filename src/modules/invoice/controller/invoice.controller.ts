@@ -2,6 +2,9 @@ import { Request, Response } from 'express';
 import ResponseHandler from '../../../utils/response-handlers/ResponseHandler';
 import InvoiceService from '../service/invoice.service';
 import * as statusCode from '../../../utils/status-codes/http-status-codes';
+import ClientService from '../../client/service/client.service';
+import Email from '../../../utils/email/email';
+import MailHelpers from '../../../utils/email/helper';
 
 class InvoiceController {
   public createInvoice = async ({ body, user }: Request, res: Response) => {
@@ -15,11 +18,26 @@ class InvoiceController {
         description: body.description,
       });
       if (invoice._id) {
+        // send email to the client after generating the invoice
+        const client = await ClientService.getClient({ _id: body.client });
+        await Email.sendWithNodemailer(
+          MailHelpers.createInvoiceEmail(
+            invoice._id,
+            invoice.createdAt,
+            client.name,
+            client.email,
+            invoice.name,
+            invoice.description,
+            invoice.amount,
+            (20 / 100) * invoice.amount,
+            20 / 100 + invoice.amount + (20 / 100) * invoice.amount,
+          ),
+        );
         return ResponseHandler.SuccessResponse(
           res,
           statusCode.HTTP_CREATED,
           true,
-          'Created Client',
+          'Created Invoice',
           { invoice },
         );
       }
@@ -27,7 +45,7 @@ class InvoiceController {
         res,
         statusCode.HTTP_BAD_REQUEST,
         false,
-        'Unable to create client',
+        'Unable to create invoice',
       );
     } catch (e) {
       return ResponseHandler.ServerErrorResponse(res);

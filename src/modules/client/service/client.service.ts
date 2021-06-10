@@ -23,5 +23,13 @@ class ClientService {
       return error;
     }
   }
+
+  public static async getClient(data: { _id: string }) {
+    try {
+      return Model.findOne(data);
+    } catch (e) {
+      return e;
+    }
+  }
 }
 export default ClientService;
