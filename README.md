@@ -4,11 +4,6 @@
 
 >  [Technologies](#technologies-used) &middot; [Installations](#installations) &middot; [API Endpoints](#api-endpoints) &middot; [Acknowledgments](#acknowledgments) &middot; [Author](#author)
 ---
-
-## Heroku App
-
-Application is deployed on Heroku. Use public URL [https://project-fibre.herokuapp.com](https://enigmatic-wildwood-43336.herokuapp.com) with API endpoints.
-
 ## API Documentation
 API Documentation generated with [postman](https://documenter.getpostman.com/view/4223397/TzeRoVYp).
 
