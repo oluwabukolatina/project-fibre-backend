@@ -9,7 +9,10 @@ class ClientController {
    * @param param0
    * @param res
    * @returns
-   * real email should be used so as to see the invoce that is sent to the user. alternatively a mailtrap credentials can be added to the nodemailer file
+   * real email should be used so as to see the
+   * invoce that is sent to the user.
+   * alternatively a mailtrap credentials can be added
+   *  to the nodemailer file
    */
   public createClient = async ({ body, user }: Request, res: Response) => {
     try {
@@ -24,7 +27,13 @@ class ClientController {
           statusCode.HTTP_CREATED,
           true,
           'Created Client',
-          { client },
+          {
+            clientId: client._id,
+            name: client.name,
+            email: client.email,
+            createdAt: client.createdAt,
+            updatedAt: client.updatedAt,
+          },
         );
       }
       return ResponseHandler.ErrorResponse(

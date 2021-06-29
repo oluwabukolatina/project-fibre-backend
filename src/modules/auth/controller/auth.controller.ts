@@ -44,7 +44,9 @@ class AuthController {
         true,
         'Log in successful',
         {
-          user: { id: existingUser._id, email: existingUser.email, token },
+          id: existingUser._id,
+          email: existingUser.email,
+          token,
         },
       );
     } catch (err) {
@@ -77,7 +79,7 @@ class AuthController {
           statusCode.HTTP_CREATED,
           true,
           'User Created.',
-          { user: { email, name } },
+          { email, name },
         );
       }
       return ResponseHandler.ErrorResponse(

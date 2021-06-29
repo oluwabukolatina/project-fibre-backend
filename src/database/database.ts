@@ -12,10 +12,7 @@ async function connectToDb() {
     useFindAndModify: false,
   };
   try {
-    return await connect(
-      secret.ENVIRONMENT === 'development' ? secret.LOCAL_DB : secret.APP_DB,
-      options,
-    );
+    return await connect(secret.APP_DB, options);
   } catch (error) {
     return error;
   }

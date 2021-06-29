@@ -41,7 +41,15 @@ class InvoiceController {
           statusCode.HTTP_CREATED,
           true,
           'Created Invoice',
-          { invoice },
+          {
+            paymentStatus: invoice.paid,
+            id: invoice._id,
+            name: invoice.name,
+            amount: invoice.amount,
+            description: invoice.description,
+            createdAt: invoice.createdAt,
+            updatedAt: invoice.updatedAt,
+          },
         );
       }
       return ResponseHandler.ErrorResponse(
