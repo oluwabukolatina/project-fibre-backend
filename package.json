@@ -31,7 +31,6 @@
     "@types/node": "^14.0.23",
     "@types/nodemailer": "^6.4.2",
     "@types/shelljs": "^0.8.8",
-    "@types/swagger-ui-express": "^4.1.2",
     "bcrypt": "^5.0.1",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
@@ -48,7 +47,6 @@
     "nodemailer": "^6.6.1",
     "nunjucks": "^3.2.3",
     "shelljs": "^0.8.4",
-    "swagger-ui-express": "^4.1.4",
     "ts-jest": "^27.0.3",
     "typescript": "^3.9.7",
     "winston": "^3.3.3"
