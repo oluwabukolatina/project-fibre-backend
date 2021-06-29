@@ -25,7 +25,6 @@ export const JWT_EXPIRY = throwIfUndefined(
   process.env.JWT_EXPIRY,
   'JWT_EXPIRY',
 );
-export const LOCAL_DB = throwIfUndefined(process.env.LOCAL_DB, 'LOCAL_DB');
 export const MAIL_TRAP_PASSWORD = throwIfUndefined(
   process.env.MAIL_TRAP_PASSWORD,
   'MAIL_TRAP_PASSWORD',
