@@ -45,6 +45,7 @@
     "nunjucks": "^3.2.3",
     "shelljs": "^0.8.4",
     "ts-jest": "^27.0.3",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "winston": "^3.3.3"
   },
@@ -61,8 +62,7 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "ts-node": "^8.10.2"
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
