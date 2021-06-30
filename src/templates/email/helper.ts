@@ -13,6 +13,7 @@ const EmailTemplates = {
     invoiceAmount: number,
     vat: number,
     total: number,
+    paymentLink: string,
   ) {
     nunjucks.configure({ autoescape: true });
     return nunjucks.renderString(
@@ -26,6 +27,26 @@ const EmailTemplates = {
         invoiceDescription,
         invoiceAmount,
         vat,
+        total,
+        paymentLink,
+      },
+    );
+  },
+  invoicePaid(
+    clientName: string,
+    invoiceName: string,
+    clientEmail: string,
+    total: number,
+  ) {
+    nunjucks.configure({ autoescape: true });
+    return nunjucks.renderString(
+      fs
+        .readFileSync(path.join(__dirname, '/invoicePaid.html'))
+        .toString('utf-8'),
+      {
+        clientName,
+        invoiceName,
+        clientEmail,
         total,
       },
     );

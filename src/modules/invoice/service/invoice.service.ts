@@ -33,5 +33,16 @@ class InvoiceService {
       return e;
     }
   }
+
+  public static async updateInvoice(
+    query: { _id: string },
+    data: { paid: IInvoice['paid'] },
+  ) {
+    try {
+      return await Model.findByIdAndUpdate(query, data);
+    } catch (e) {
+      return e;
+    }
+  }
 }
 export default InvoiceService;

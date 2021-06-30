@@ -12,6 +12,7 @@ const MailHelpers = {
     invoiceAmount: number,
     vat: number,
     total: number,
+    paymentLink: string,
   ) {
     return {
       to: clientEmail,
@@ -27,6 +28,27 @@ const MailHelpers = {
         invoiceDescription,
         invoiceAmount,
         vat,
+        total,
+        paymentLink,
+      ),
+    };
+  },
+
+  successfulInvoicePaymentEmail(
+    clientName: string,
+    invoiceName: string,
+    clientEmail: string,
+    total: number,
+  ) {
+    return {
+      to: clientEmail,
+      from: { name: 'Tina', email: secrets.EMAIL_FROM },
+      subject: 'Success Invoice payment',
+      text: 'Invoice',
+      html: EmailTemplates.invoicePaid(
+        clientName,
+        invoiceName,
+        clientEmail,
         total,
       ),
     };

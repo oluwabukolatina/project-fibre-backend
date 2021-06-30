@@ -42,3 +42,7 @@ export const EMAIL_PASSWORD = throwIfUndefined(
   process.env.EMAIL_PASSWORD,
   'EMAIL_PASSWORD',
 );
+export const PAYSTACK_TEST_SECRET_KEY = throwIfUndefined(
+  process.env.PAYSTACK_TEST_SECRET_KEY,
+  'PAYSTACK_TEST_SECRET_KEY',
+);
