@@ -4934,3 +4934,6 @@
 2021-06-30 14:23:57.770 [34minfo[39m: [34mUsing .env file to supply config environment variables[39m
 2021-06-30 14:24:05.547 [34minfo[39m: [34mconnected[39m
 2021-06-30 14:24:05.548 [34minfo[39m: [34mApp is running at 2021[39m
+2021-06-30 14:24:43.053 [34minfo[39m: [34mUsing .env file to supply config environment variables[39m
+2021-06-30 14:24:45.291 [34minfo[39m: [34mconnected[39m
+2021-06-30 14:24:45.292 [34minfo[39m: [34mApp is running at 2021[39m
