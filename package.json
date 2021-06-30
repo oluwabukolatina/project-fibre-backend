@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run copy-static-assets",
     "dev": "nodemon src/bin/server.ts",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "lint:ts": "eslint --ext=jsx,ts src",
