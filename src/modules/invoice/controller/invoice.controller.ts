@@ -8,7 +8,6 @@ import Email from '../../../utils/email/email';
 import MailHelpers from '../../../utils/email/helper';
 import Paystack from '../utils/paystack';
 import INVOICE_URL from '../url/invoiceUrl';
-import { ENVIRONMENT } from '../../../config/secrets';
 
 class InvoiceController {
   public createInvoice = async ({ body, user }: Request, res: Response) => {
@@ -93,6 +92,7 @@ class InvoiceController {
         'Unable to create invoice',
       );
     } catch (e) {
+      console.log(e);
       return ResponseHandler.ServerErrorResponse(res);
     }
   };
