@@ -92,6 +92,7 @@ class InvoiceController {
         'Unable to create invoice',
       );
     } catch (e) {
+      console.log(e)
       return ResponseHandler.ServerErrorResponse(res);
     }
   };
